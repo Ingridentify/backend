@@ -1,5 +1,5 @@
 node_modules
 .env
 dockerfile
-/src/seeders
-/src/migrations
+seeders
+/migrations
