@@ -3,7 +3,7 @@ const {hashPassword, comparePasswords} = require('../config/hashPw.js')
 
 exports.editProfile = async (req, res) => {
     try {
-      let { id } = req.params
+      let { id } = req.decoded
       const user = await Users.findByPk(id)
   
       if (!user) {

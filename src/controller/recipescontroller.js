@@ -4,14 +4,13 @@ exports.getRecipes = async (req, res) => {
     try {
         let { name } = req.params
 
-        if (!name) {
+        if (name === undefined || name === null) {
             return res.status(400).json({
-                error: "Bad Request"
-            })
+                message: "Bad Request"
+            });
         }
 
         const recipes = await Recipes.findAll({
-            attributes: ['cuisine', 'recipes'],
             where: {
                 name: name,
             }

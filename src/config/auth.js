@@ -17,7 +17,8 @@ exports.authToken = async (req, res, next) =>{
     //verif token (decoded)
     let decoded;
     try {
-        const decoded = await jwt.verify(token, process.env.JWT_SECRET);
+        const decoded = await jwt.verify(token, process.env.JWT_SECRET)
+        req.decoded = decoded
     } catch (err) {
         return next(res.status(401).json({
             error: err,

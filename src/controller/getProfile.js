@@ -2,13 +2,13 @@ const { Users } = require('../models')
 
 exports.getProfile = async (req, res) => {
     try {
-      let { id } = req.params
+      let { id } = req.decoded
 
-        if(!id) {
-            return res.status(404).json({
-                message: "Bad Request"
-            })
-        }
+        if (id === undefined || id === null) {
+          return res.status(400).json({
+              message: "Bad Request"
+          })
+      }
 
         const user = await Users.findByPk(id, {
             attributes: ['id', 'name', 'email'],
