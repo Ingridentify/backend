@@ -1,8 +1,8 @@
 # Cloud Computing Team Members
-| Bangkit ID | Name | Learning Path | University |
-| ---------- | ---- | ------------- | ---------- |
-| C296BSY4285 | Zandy Qois | Cloud Computing | Universitas Pembangunan Nasional "Veteran" Jawa Timur |
-| C296BSX3753 | Adinda Putri Budi Saraswati | Cloud Computing | Universitas Pembangunan Nasional "Veteran" Jawa Timur |
+| Bangkit ID | Name | Learning Path | University | Contact |
+| ---------- | ---- | ------------- | ---------- | ------- |
+| C296BSY4285 | Zandy Qois | Cloud Computing | Universitas Pembangunan Nasional "Veteran" Jawa Timur | https://www.linkedin.com/in/zandyqois/ |
+| C296BSX3753 | Adinda Putri Budi Saraswati | Cloud Computing | Universitas Pembangunan Nasional "Veteran" Jawa Timur | www.linkedin.com/in/adinda-putri-budi-saraswati |
 
 # Introduction
 Ingridentify is an Android application supported with a REST API using the ExpressJs Framework for Node.js and CloudSQL as the database. This API is then being deployed using Google Cloud Run. Moreover, Cloud Storage service is used as a storage for multimedia images required by the android application that can be accessed using a direct access link to bucket location of the images.
