@@ -15,12 +15,20 @@ module.exports = (sequelize, DataTypes) => {
       primaryKey: true,
       allowNull: false
     },
+    urlImage: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
     name: {
       type: DataTypes.STRING,
       allowNull: false
     },
     cuisine: {
       type: DataTypes.STRING,
+      allowNull:false
+    },
+    ingridient: {
+      type:DataTypes.STRING,
       allowNull:false
     },
     recipes: {

@@ -7,7 +7,7 @@ exports.getRecipes = async (req, res) => {
         if (name === undefined || name === null) {
             return res.status(400).json({
                 message: "Bad Request"
-            });
+            })
         }
 
         const recipes = await Recipes.findAll({
@@ -20,10 +20,18 @@ exports.getRecipes = async (req, res) => {
             return res.status(404).json({ error: "Recipe not found" });
         }
 
+        const formattedRecipes = recipes.map(recipe => ({
+            id: recipe.id, 
+            name: recipe.name,
+            ingridient: JSON.parse(recipe.ingridient),
+            recipes: JSON.parse(recipe.recipes)
+        }))
+
         return res.status(200).json({
             status: "Success",
-            data: {recipes}
+            data: formattedRecipes
         })
+        
 
     } catch (error) {
         console.log(error)

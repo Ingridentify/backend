@@ -1,4 +1,7 @@
 'use strict';
+
+const { sequelize } = require('../models');
+
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
@@ -9,12 +12,20 @@ module.exports = {
         type: Sequelize.UUID,
         defaultValue: Sequelize.UUIDV4
       },
+      urlImage: {
+        type: Sequelize.STRING,
+        allowNull: false
+      },
       name: {
         type: Sequelize.STRING,
         allowNull:false
       },
       cuisine: {
         type: Sequelize.STRING,
+        allowNull: false
+      },
+      ingridient: {
+        type:Sequelize.TEXT,
         allowNull: false
       },
       recipes: {
