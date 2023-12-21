@@ -11,15 +11,15 @@ Ingridentify is an Android application supported with a REST API using the Expre
 To deploy this application, we use Google Cloud Platform services such as: 
   - Google Cloud Run
   - Google Cloud Build
+  - Container Registry
     
 # Replicate Our Work
 You can follow these steps if you want to replicate our work.
 1. Create new Google Cloud project
-2. Enable Cloud Run API, Cloud Build API, and CloudSQL API
-3. Install and initialize the Google Cloud SDK to create a container
-4. Create SQL instance on CloudSQL
-5. Configure your SQL instance to be accessible through the internet (we will use a public IP)
-6. Connect to the SQL instance and create the database and tables using the command below:
+2. Enable Cloud Run API, Cloud Build API, Container Registry API, and CloudSQL API
+3. Create SQL instance on CloudSQL
+4. Configure your SQL instance to be accessible through the internet (we will use a public IP)
+5. Connect to the SQL instance and create the database and tables using the command below:
 ```sh
 CREATE DATABASE Ingridentify;
 
@@ -43,8 +43,8 @@ CREATE TABLE Users (
   updatedAt TIMESTAMP NOT NULL
 );
 ```
-8. Fill the database that has been created with the data 
-9. Clone Ingridentify-CC repository
+6. Fill the database that has been created with the data 
+7. Clone Ingridentify-CC repository
 ```sh
 git clone https://github.com/Ingridentify/backend.git
 ```
@@ -52,7 +52,7 @@ Then, go to the Ingridentify-CC folder
 ```sh
 cd backend
 ```
-10. Run this command to deploy to google cloud run:
+8. Run this command to deploy to google cloud run:
 ```sh
 - gcloud builds submit --tag gcr.io/<Project ID>/<Service Name>
 - gcloud run deploy --image gcr.io/<Project ID>/<Service Name> --platform managed
