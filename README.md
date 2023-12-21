@@ -14,7 +14,7 @@ Ingridentify is an Android application supported with a REST API using the Expre
 
 # Library
 Libraries used for developing Ingridentify:
-- Express
+- ExpressJS
 - bcryptjs
 - cors
 - dotenv
