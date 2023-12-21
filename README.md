@@ -8,9 +8,48 @@
 Ingridentify is an Android application supported with a REST API using the ExpressJs Framework for Node.js and CloudSQL as the database. This API is then being deployed using Google Cloud Run. Moreover, Cloud Storage service is used as a storage for multimedia images required by the android application that can be accessed using a direct access link to bucket location of the images.
 
 # Deployment
-- Google Cloud Platform (GCP)
+To deploy this application, we use Google Cloud Platform services such as: 
   - Google Cloud Run
   - Google Cloud Build
+    
+# Replicate Our Work
+You can follow these steps if you want to replicate our work.
+1. Create new Google Cloud project
+2. Enable Cloud Run API, Cloud Build API, and CloudSQL API
+3. Install and initialize the Google Cloud SDK to create a container
+4. Create SQL instance on CloudSQL
+5. Configure your SQL instance to be accessible through the internet (we will use a public IP)
+6. Connect to the SQL instance and create the database and tables using the command below:
+```sh
+CREATE DATABASE Ingridentify;
+
+CREATE TABLE Recipes (
+  id UUID PRIMARY KEY DEFAULT UUIDV4,
+  urlImage VARCHAR(255) NOT NULL,
+  name VARCHAR(255) NOT NULL,
+  cuisine VARCHAR(255) NOT NULL,
+  ingridient TEXT NOT NULL,
+  recipes TEXT NOT NULL,
+  createdAt TIMESTAMP NOT NULL,
+  updatedAt TIMESTAMP NOT NULL
+);
+
+CREATE TABLE Users (
+  id UUID PRIMARY KEY DEFAULT UUIDV4,
+  name VARCHAR(255) NOT NULL,
+  email VARCHAR(255) NOT NULL UNIQUE,
+  password VARCHAR(255) NOT NULL,
+  createdAt TIMESTAMP NOT NULL,
+  updatedAt TIMESTAMP NOT NULL
+);
+```
+8. Fill the database that has been created with the data 
+9. Clone this repository and go to the repository folder
+10. Run this command to deploy to google cloud run:
+```sh
+- gcloud builds submit --tag gcr.io/ingridentify/ingridentify-api
+- gcloud run deploy --image gcr.io/ingridentify/ingridentify-api --platform managed
+```
 
 # Library
 Libraries used for developing Ingridentify:
@@ -188,3 +227,4 @@ Libraries used for developing Ingridentify:
   }
 }
 ```
+
