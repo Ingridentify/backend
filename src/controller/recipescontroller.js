@@ -21,8 +21,10 @@ exports.getRecipes = async (req, res) => {
         }
 
         const formattedRecipes = recipes.map(recipe => ({
-            id: recipe.id, 
+            id: recipe.id,
+            urlImage: recipe.urlImage,
             name: recipe.name,
+            cuisine: recipe.cuisine,
             ingridient: JSON.parse(recipe.ingridient),
             recipes: JSON.parse(recipe.recipes)
         }))
