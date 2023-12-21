@@ -22,7 +22,8 @@ module.exports = {
       },
       cuisine: {
         type: Sequelize.STRING,
-        allowNull: false
+        allowNull: false,
+        unique: true
       },
       ingridient: {
         type:Sequelize.TEXT,
