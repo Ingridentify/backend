@@ -44,11 +44,18 @@ CREATE TABLE Users (
 );
 ```
 8. Fill the database that has been created with the data 
-9. Clone this repository and go to the repository folder
+9. Clone Ingridentify-CC repository
+```sh
+git clone https://github.com/Ingridentify/backend.git
+```
+Then, go to the Ingridentify-CC folder
+```sh
+cd backend
+```
 10. Run this command to deploy to google cloud run:
 ```sh
-- gcloud builds submit --tag gcr.io/ingridentify/ingridentify-api
-- gcloud run deploy --image gcr.io/ingridentify/ingridentify-api --platform managed
+- gcloud builds submit --tag gcr.io/<Project ID>/<Service Name>
+- gcloud run deploy --image gcr.io/<Project ID>/<Service Name> --platform managed
 ```
 
 # Library
