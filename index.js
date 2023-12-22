@@ -10,6 +10,9 @@ app.use(express.urlencoded({extended: true}))
 app.use(cors())
 
 //routing
+app.get("/", (req, res) => {
+    res.send("<h1>Selamat datang di backend Ingridentify</h1>");
+  })
 app.use ("/ingridentify", route)
 
 //server
